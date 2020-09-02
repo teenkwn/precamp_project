@@ -9,6 +9,7 @@ body {
     justify-content: center;
     margin-right: auto;
     margin-left: auto;
+    background-color: white;
 }
 
 .container {
@@ -96,5 +97,77 @@ body {
 }
 ul {
     padding:0;
+    position: relative;
 }
 
+.personal_btn {
+    border: none;
+    z-index: 1;
+}
+li {
+    position: relative;
+}
+.close {
+    position: relative;
+    color: gray;
+    cursor: pointer;
+}
+.name {
+    border: none;
+    display: block;
+    font-size: 2rem;
+    background-color: transparent;
+    color: white;
+}
+@media only screen and (max-width: 600px) {
+    .name {
+        font-size: 1.3rem;
+    }
+}
+.background-color {
+    margin-top: 3rem;
+    text-align: center;
+    font-style: bold;
+    font-size: 2rem;
+}
+.all_color {
+    text-align: center;
+}
+.color--1,
+.color--2,
+.color--3 {
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+.color--1 {
+    background-color: pink;
+}
+.color--2 {
+    background-color: green;
+}
+.color--3 {
+    background-color: yellow;
+}
+.delete_button {
+    display: block;
+    border:none;
+    color:red;
+    background-color:white;
+    cursor:pointer;
+    margin-bottom: 2rem;
+    padding: 0;
+}
+.delete_button:link {
+    background-color: white;
+}
+.delete_button:hover {
+    background-color: pink;
+}
+.delete_button:focus {
+    outline: none;
+    background-color: pink;
+}

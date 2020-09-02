@@ -4,6 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"  href="final.css">
+    <script>
+        function myFunction() {
+            var list = document.getElementById("myUL");
+            list.removeChild(list.childNodes[0]);
+        }
+        
+        // var nodeList = document.getElementsByClassName("list_skill");
+        // var i;
+        // console.log(nodeList);
+        // for (i = 0; i < nodeList.length; i++) {
+        //     var span = document.createElement("SPAN");
+        //     var txt = document.createTextNode("\u00D7");
+        //     span.className = "close";
+        //     span.appendChild(txt);
+        //     nodeList[i].appendChild(span);
+        // }
+        // var close = document.getElementsByClassName("close");
+        // var i;
+        
+        // for (i = 0; i < close.length; i++) {
+        //     close[i].onclick = function() {
+        //     var div = this.parentElement;
+        //     div.style.display = "none";
+        // }
+        // }
+
+
+        function newElement() {
+            var li = document.createElement("li");
+            var inputValue = document.getElementById("skill_input").value;
+            var t = document.createTextNode(inputValue);
+            li.className = "list_skill"
+            li.appendChild(t);
+
+            if(inputValue ==='') {
+                alert("you must write sth!");
+            } else {
+                document.getElementById("myUL").appendChild(li);
+
+            }
+            document.getElementById("skill_input").value = "";
+
+            // var span = document.createElement("SPAN");
+            // var txt = document.createTextNode("\u00D7");
+            // span.className = "close";
+            // span.appendChild(txt);
+            // li.appendChild(span);
+
+            // for (i = 0; i < close.length; i++) {
+            //     close[i].onclick = function() {
+            //     var div = this.parentElement;
+            //     div.style.display = "none";
+            //     }
+            // }
+        }
+    
+        
+        function changeToPink() {
+            document.body.style.backgroundColor = "pink";
+        }
+
+        function changeToGreen() {
+            document.body.style.backgroundColor = "green";
+        }
+        function changeToYellow() {
+            document.body.style.backgroundColor = "yellow";
+        }
+        
+    </script>
     <title>Meaning</title>
 </head>
 <body>
@@ -11,8 +80,8 @@
         <div class="header">
             <img src="img/personal_pic.jpg" alt="my pic" class="header__img">
             <div class="header__text">
-                <span class="text_inside">Kawinna Tiraborisute (Teen) </span>
-                <span class="text_inside">Engineering Student</span>
+                <input type="text" class="name" name="txt" value="Kawinna Tiraborisute">
+                <span>Engineering Student</span>
             </div>
         </div>
         <div class="personal_detail">
@@ -34,10 +103,12 @@
             </div>
             <div class="personal_skill">
                 <h3 class="head_text">skill</h3>
-                <ul>
-                    <li>English : intermediate</li>
-                    <li>Basic computer programming Java, Javascript, CSS, HTML, Python</li>
+                <ul id="myUL">
+                    <li class="list_skill">English : intermediate</li>
+                    <li class="list_skill">Basic computer programming Java, Javascript, CSS, HTML, Python</li>
                 </ul>
+                <button class="delete_button" onclick="myFunction()">Delete Skill X</button>
+                <input type="text" id="skill_input" placeholder="more skill.."><button class="personal_btn" onClick="newElement()">+</button>
             </div>
         </div>
         <div class="experience_detail">
@@ -63,7 +134,12 @@
                     <li>Head of Freshmen welcoming ceremony in Chulalongkorn University</li>
                 </ul>
             </div>
-            
+            <div class="background-color">background-color</div>
+            <div class="all_color">
+                <div class="color--1" onmouseover="changeToPink()"></div>
+                <div class="color--2" onmouseover="changeToGreen()"></div>
+                <div class="color--3" onmouseover="changeToYellow()"></div>
+            </div>
         </div>
     </div>
     
